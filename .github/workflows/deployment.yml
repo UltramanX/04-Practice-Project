@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: get code
         uses: actions/checkout@v2
-        
+
       - name: install dependencies
         run: npm install
 
@@ -19,6 +19,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - name: get code
+        uses: actions/checkout@v2
+        
       - name: build project
         run: npm run build
 
