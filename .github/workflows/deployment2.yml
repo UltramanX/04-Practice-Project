@@ -25,12 +25,15 @@ jobs:
 
       - name: test
         run: npm run test
-        
+
   deploy:
     runs-on: ubuntu-latest 
     steps:
       - name: get code
         uses: actions/checkout@v2
+
+      - name: install dependencies
+        run: npm ci  
 
       - name: build project
         run: npm run build
